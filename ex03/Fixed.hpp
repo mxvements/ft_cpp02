@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:30:52 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/12 19:50:48 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/16 20:08:10 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ class Fixed
 		bool operator<=(const Fixed &fixed);
 		bool operator<(const Fixed &fixed);
 
-		Fixed &operator+(const Fixed &fixed);
-		Fixed &operator-(const Fixed &fixed);
-		Fixed &operator*(const Fixed &fixed);
-		Fixed &operator/(const Fixed &fixed);
+		Fixed operator+(const Fixed &fixed);
+		Fixed operator-(const Fixed &fixed);
+		Fixed operator*(const Fixed &fixed);
+		Fixed operator/(const Fixed &fixed);
 
 		Fixed &operator++(); //pre increment
-		Fixed &operator++(int); //post increment, dummy iny param
+		Fixed &operator++(int); //post increment, dummy int param
 		Fixed &operator--();
 		Fixed &operator --(int);
 		

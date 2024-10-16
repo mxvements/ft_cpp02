@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:31:34 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/12 20:18:04 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/16 20:07:18 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::~Fixed(void){};
 /**
  * Copy constructor
  * Fixed b(a);
- * 
+ *
  * copies a into b
  * this references b, which is the object initializing
  */
@@ -42,15 +42,15 @@ Fixed::Fixed(const float float_nbr)
 /**
  * Copy assignment overload
  * c = b, both already initialized
- * 
+ *
  * this references c
  * sets c with the data from b (&fixed from the function below)
- * 
+ *
  */
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
 	if (this != &fixed)
-		this->_raw_bits = fixed.getRawBits();		
+		this->_raw_bits = fixed.getRawBits();
 	return *this;
 }
 
@@ -58,11 +58,11 @@ Fixed& Fixed::operator=(const Fixed &fixed)
 
 /**
  * Insertion assignment overload
- * 
+ *
  * Example with 42.42
  * 		when storing raw_bits
  * 		42.42 * (1 << 8) = 42.42 * 256 = 10859
- * 		
+ *
  * 		when calculating the ouput
  * 		int part	-> 10859 >> 8 = 42
  * 		float part	-> 10859 << 255 = 107
@@ -119,36 +119,28 @@ bool Fixed::operator<(const Fixed &fixed)
 	return (0);
 }
 
-Fixed &Fixed::operator+(const Fixed &fixed)
+Fixed Fixed::operator+(const Fixed &fixed)
 {
 	float added_float = this->toFloat() + fixed.toFloat();
-	Fixed tmp(added_float);
-	this->setRawBits(tmp.getRawBits());
-	return (*this);
+	return (Fixed(added_float));
 }
 
-Fixed &Fixed::operator-(const Fixed &fixed)
+Fixed Fixed::operator-(const Fixed &fixed)
 {
-	float substracted_float = this->toFloat() + fixed.toFloat();
-	Fixed tmp(substracted_float);
-	this->setRawBits(tmp.getRawBits());
-	return (*this);
+	float substracted_float = this->toFloat() - fixed.toFloat();
+	return (Fixed(substracted_float));
 }
 
-Fixed &Fixed::operator*(const Fixed &fixed)
+Fixed Fixed::operator*(const Fixed &fixed)
 {
 	float mult_float = this->toFloat() * fixed.toFloat();
-	Fixed tmp(mult_float);
-	this->setRawBits(tmp.getRawBits());
-	return (*this);
+	return (Fixed(mult_float));
 }
 
-Fixed &Fixed::operator/(const Fixed &fixed)
+Fixed Fixed::operator/(const Fixed &fixed)
 {
 	float div_float = this->toFloat() / fixed.toFloat();
-	Fixed tmp(div_float);
-	this->setRawBits(tmp.getRawBits());
-	return (*this);
+	return (Fixed(div_float));
 }
 
 //Prefix
