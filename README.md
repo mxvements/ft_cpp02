@@ -69,3 +69,39 @@ Adding these together -> 3 + 0.25 = 3.25
 
 + Range: The maximum you can represent with 4 bits for the integer part is 15, so you can’t represent numbers larger than that.
 + Precision: You can only represent fractions that can be expressed within 4 bits after the decimal point, limiting how precise your values can be.
+
+---
+
+## BSP (binary space partitioning)
+
+A method used in computer graphics, computational geometry, and game development to recursively 
+subdivide a space into convex sets byy using hyperplanes.
+
+To determine if a point is inside a trinagle using BSP, we can take advantaged of the properties 
+of trienagles and rheir orientation. Although BSP trees are typpically used for partitioning 
+space in more complex scenarios, we can apply a straightforward method using the concepts of 
+area and orientation to check for point containment.
+Define the Triangle: Let the triangle be defined by three vertices 
+𝐴
+A, 
+𝐵
+B, and 
+𝐶
+C.
+
+Define the Point: Let the point to check be 
+𝑃
+P.
+
+Calculate Areas: To determine if the point is inside the triangle, we can calculate the areas of the triangle formed by the vertices and the point.
+
+Calculate the area of triangle 𝐴, 𝐵,𝐶
++ Define the triangle as an array of pts {A. B. C}
++ Define the point to evaluate P
++ Calculate areas with the formula (0.5 * ((x1 * (y2 - y3)) + (x2 * (y3 - y1)) + (x3 * (y1 - y2))))
+  + of the triangle
+  + of the trinagles formed by the point P
+    + ABP
+    + BCP
+    + CAP
++ Area(ABC) = Area(ABP) + Area(BCP) + Area(CAP) -> formula to check containment
