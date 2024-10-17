@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 20:19:37 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/16 19:31:18 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:50:55 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,21 @@
 class Point
 {
 	private:
-		Fixed _coords[2];
+		Fixed _x;
+		Fixed _y;
 	
 	public:
 		Point(void);
-		Point(float coords[2]);
+		Point (float x, float y);
 		~Point(void);
-		void setCoords(float coords[2]);
-		Fixed *getCoords(void);
+		Point(const Point &point); //copy constructor
+		Point &operator=(const Point &point); //copy assignment
+		//getters, setters
+		void setX(Fixed x);
+		void setY(Fixed y);
+		Fixed getX(void);
+		Fixed getY(void);
+		//operators overload
 		friend std::ostream &operator<<(std::ostream &os, Point &p);
 } ;
 
