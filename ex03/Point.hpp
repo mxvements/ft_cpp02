@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 20:19:37 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/17 20:50:55 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:37:53 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,36 @@
 #include <iomanip>
 #include <string>
 #include "Fixed.hpp"
+
+// Color font code
+# define BLACK "\x1B[30m"
+# define RED "\x1b[31m"
+# define GREEN "\x1b[32m"
+# define YELLOW "\x1b[33m"
+# define BLUE "\x1b[34m"
+# define MAGENTA "\x1b[35m"
+# define CYAN "\x1b[36m"
+# define WHITE "\x1B[37m"
+# define ORANGE "\x1B[38;2;255;128;0m"
+# define ROSE "\x1B[38;2;255;151;203m"
+# define LBLUE "\x1B[38;2;53;149;240m"
+# define LGREEN "\x1B[38;2;17;245;120m"
+# define GRAY "\x1B[38;2;176;174;174m"
+# define RESET "\x1b[0m"
+// Color background code
+# define BG_BLACK "\x1B[40m"
+# define BG_RED "\x1B[41m"
+# define BG_GREEN "\x1B[42m"
+# define BG_YELLOW "\x1B[43m"
+# define BG_BLUE "\x1B[44m"
+# define BG_MAGENTA "\x1B[45m"
+# define BG_CYAN "\x1B[46m"
+# define BG_WHITE "\x1B[47m"
+# define BG_ORANGE "\x1B[48;2;255;128;0m"
+# define BG_LBLUE "\x1B[48;2;53;149;240m"
+# define BG_LGREEN "\x1B[48;2;17;245;120m"
+# define BG_GRAY "\x1B[48;2;176;174;174m"
+# define BG_ROSE "\x1B[48;2;255;151;203m"
 
 class Point
 {
@@ -39,7 +69,6 @@ class Point
 		friend std::ostream &operator<<(std::ostream &os, Point &p);
 } ;
 
-Point *setTriangle(float coords1[2], float coords2[2], float coords3[2]);
-bool bsp(Point *tr, Point *p);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
