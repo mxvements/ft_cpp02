@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 20:36:26 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/18 18:44:17 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:46:03 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,14 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 
 	Point tr2[3] = {b, c, point};
 	Fixed *area_tr2 = tr_area(tr2);
-	if (area_tr2->toInt() <= 0.001f)
+	if (area_tr2->toFloat() <= 0.001f)
 	{
 		std::cout << ORANGE << "Point in BC line" << RESET << std::endl;
 	}
 
 	Point tr3[3] = {c, a, point};
 	Fixed *area_tr3 = tr_area(tr3);
-	if (area_tr3->toInt() <= 0.001f)
+	if (area_tr3->toFloat() <= 0.001f)
 	{
 		std::cout << ORANGE << "Point in CA line" << RESET << std::endl;
 	}
