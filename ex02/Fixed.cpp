@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:31:34 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/16 20:18:38 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/11 19:51:27 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ bool Fixed::operator!=(const Fixed &fixed)
 
 bool Fixed::operator==(const Fixed &fixed)
 {
-	if (this->getRawBits() != fixed.getRawBits())
+	if (this->getRawBits() == fixed.getRawBits())
 		return (0);
 	return (1);
 }
