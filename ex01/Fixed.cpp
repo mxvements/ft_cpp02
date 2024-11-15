@@ -6,12 +6,13 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:31:34 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/12 18:16:53 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:58:40 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <string>
+#include <cmath>
 
 Fixed::Fixed(void):_raw_bits(0)
 {
@@ -42,7 +43,7 @@ Fixed::Fixed(const int int_nbr)
 Fixed::Fixed(const float float_nbr)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_raw_bits = (float_nbr * (1 << Fixed::_fract_bits));
+	this->_raw_bits = roundf(float_nbr * (1 << Fixed::_fract_bits));
 }
 
 /**
